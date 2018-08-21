@@ -47,10 +47,34 @@ IBM Cloud Private은 기본적으로 로컬 저장소를 사용합니다. 지금
 예를 들어 Kubernetes 에서 제공하는 다양한 Helm Chart들을 바로 Import하여 사용할 수도 있고요. 
 (https://kubernetes-charts.storage.googleapis.com/)
 
-IBM Cloud Private 웹 관리 콘솔에 로그인 후 
+IBM Cloud Private 웹 관리 콘솔에 로그인 후 왼쪽 메뉴에서 *관리 > Helm 저장소* 로 들어가면 다양한 저장소를 볼 수 있습니다.
+
+![Alt](./images/deploy-custom-helm-chart-ppa04.png)
 
 
+4. 로드가 다 되었으면 업로드된 Helm Chart를 확인하기 위해 *우측 상단 카탈로그* 를 클릭
 
 
+5. 카탈로그에서 *bluecompute* 를 검색 후 클릭합니다.
+![Alt](./images/deploy-custom-helm-chart-ppa05.png)
 
+6. README 내용을 통해 배포할 서비스 내용 확인 후 우측 하단의 *구성* 클릭
+![Alt](./images/deploy-custom-helm-chart-ppa06.png)
 
+7. 배포할 서비스 (릴리즈)의 이름과 배포할 타겟 Namespace를 입력합니다. 그 외 필요한 Parameter 값들도 입력하는데, 본 서비스는 디폴트 값으로 배포하면 되기에 이름과 namespace만 입력합니다. 이후 *설치* 클릭
+![Alt](./images/deploy-custom-helm-chart-ppa07.png)
+
+8. 배포 완료 안내 화면이 뜨면 *Helm Release 보기* 클릭
+![Alt](./images/deploy-custom-helm-chart-ppa08.png)
+
+9. 이제 10개의 마이크로서비스가 하나씩 뜨기 시작합니다. Pod 별 배포 상태를 확인할 수 있습니다. 
+![Alt](./images/deploy-custom-helm-chart-ppa09.png)
+![Alt](./images/deploy-custom-helm-chart-ppa10.png)
+
+10. 모든 Pod의 상태가 *1* 로 표기되면 실행 상태이며 사용 가능한 상태입니다. 모두 실행 상태이면 우측 상단의 *실행* 버튼을 클릭합니다.
+![Alt](./images/deploy-custom-helm-chart-ppa11.png)
+
+11. 컴퓨터를 구매할 수 있는 Bluecompute 쇼핑몰 사이트가 실행되었습니다! 로그인 (user/password) 도 하고, 카탈로그에서 상품을 장바구니에 담을 수도 있습니다. :)
+![Alt](./images/deploy-custom-helm-chart-ppa12.png)
+
+위의아키텍처에서 보신 바와 같이 본 서비스는 여러개의  DB와 APP으로 이루어진 마이크로서비스 집합입니다. 서비스간 통신에 필요한 Secret 정보가 분리되어 배포되며, 사용자를 DB에 등록하기 위한 Job 도 함께 배포되었습니다. 이렇듯 복잡한 조합의 서비스들을 Helm Chart를 통해 템플릿화된 서비스로 쉽게 배포할 수 있습니다.
