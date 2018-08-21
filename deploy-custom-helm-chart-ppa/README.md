@@ -10,7 +10,7 @@ IBM Cloud Private은 Kubernetes 패키지 매니저인 오픈소스 Helm 을 사
 복잡한 리소스 구성 (Deployment, Jobs, Volume, Network 설정, Configuration, Secret 정보 등) 일지라도 템플릿으로 만들어 개발자간 공유하고 효율적으로 손쉽게 배포할 수 있습니다.
 
 나만의 카탈로그 서비스 (Helm Chart) 만드는 법은 다음에 알아보기로 하고,
-오늘은 이미 만들어진 Helm Chart를 _1. 업로드_ _2.배포_ 해보겠습니다. 
+오늘은 이미 만들어진 Helm Chart를 _**1. 업로드**_ 하고 _**2.배포**_ 해보겠습니다. 
 
 아, 추가로 한가지 더!
 이번에 배포할 Helm Chart는 컨테이너 이미지까지 패키징 된 오프라인 패키지 (PPA)입니다. 
